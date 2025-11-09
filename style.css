@@ -1,0 +1,297 @@
+
+:root {
+    --primary-color: #2a9d8f; /* Un vert "éco" */
+    --secondary-color: #264653; /* Un bleu foncé "tech" */
+    --light-color: #ffffff;
+    --dark-color: #333333;
+    --bg-light: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Fait défiler doucement lors d'un clic sur le menu */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    font-size: 16px; /* Minimum 16px pour l'accessibilité */
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+section {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+nav .logo img {
+    height: 100px;  /* Ajustez 50px si vous le voulez plus grand ou plus petit */
+    width: auto;
+}
+
+/* ======== HEADER & NAVIGATION ======== */
+header {
+    background-color: var(--light-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Menu qui reste en haut */
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 1rem 2rem;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* ======== SECTION ACCUEIL (HERO) ======== */
+.hero {
+	background-color: var(--secondary-color);
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-color);;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #2fbbab;
+}
+
+/* ======== SECTIONS GÉNÉRIQUES ======== */
+.dark-section {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+}
+
+.dark-section h2 {
+    color: var(--primary-color);
+}
+
+/* Structure en 2 colonnes (texte/image) */
+.content-split {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.content-split .text-content,
+
+.content-split .image-content {
+    flex: 1;
+}
+
+/* ======== SECTION PROBLÉMATIQUE (Stats) ======== */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* Pour les petits écrans */
+}
+
+.stat-card {
+    background: var(--bg-light);
+    color: var(--dark-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    flex-basis: 300px; /* Chaque carte fait 300px de large */
+}
+
+.stat-card h3 {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+/* ======== SECTION IMPACTS ======== */
+.impacts-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.impact-card {
+    background-color: #2f5a6b; /* Un peu plus clair que le fond */
+    padding: 1.5rem;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 280px;
+}
+
+.impact-card h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* ======== SECTION GALERIE ======== */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin-bottom: 2rem;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid var(--bg-light);
+}
+
+/* ======== PIED DE PAGE ======== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    margin-top: 2rem;
+}
+
+/* ======== RESPONSIVE (POUR MOBILES) ======== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .content-split {
+        flex-direction: column;
+    }
+
+    .stats-container, .impacts-container {
+        flex-direction: column;
+    }
+
+}
